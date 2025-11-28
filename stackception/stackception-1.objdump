@@ -1,0 +1,440 @@
+
+stackception-1:     file format elf64-x86-64
+
+
+Disassembly of section .text:
+
+0000000000001ac0 <.text>:
+    1ac0:	f3 0f 1e fa          	endbr64
+    1ac4:	31 ed                	xor    %ebp,%ebp
+    1ac6:	49 89 d1             	mov    %rdx,%r9
+    1ac9:	5e                   	pop    %rsi
+    1aca:	48 89 e2             	mov    %rsp,%rdx
+    1acd:	48 83 e4 f0          	and    $0xfffffffffffffff0,%rsp
+    1ad1:	50                   	push   %rax
+    1ad2:	54                   	push   %rsp
+    1ad3:	45 31 c0             	xor    %r8d,%r8d
+    1ad6:	31 c9                	xor    %ecx,%ecx
+    1ad8:	48 8d 3d d1 00 00 00 	lea    0xd1(%rip),%rdi        # 1bb0 <__cxa_finalize@plt-0x520>
+    1adf:	ff 15 3b 18 00 00    	call   *0x183b(%rip)        # 3320 <__stack_chk_fail@plt+0x11c0>
+    1ae5:	f4                   	hlt
+    1ae6:	cc                   	int3
+    1ae7:	cc                   	int3
+    1ae8:	cc                   	int3
+    1ae9:	cc                   	int3
+    1aea:	cc                   	int3
+    1aeb:	cc                   	int3
+    1aec:	cc                   	int3
+    1aed:	cc                   	int3
+    1aee:	cc                   	int3
+    1aef:	cc                   	int3
+    1af0:	48 8d 3d 79 28 00 00 	lea    0x2879(%rip),%rdi        # 4370 <__stack_chk_fail@plt+0x2210>
+    1af7:	48 8d 05 72 28 00 00 	lea    0x2872(%rip),%rax        # 4370 <__stack_chk_fail@plt+0x2210>
+    1afe:	48 39 f8             	cmp    %rdi,%rax
+    1b01:	74 15                	je     1b18 <__cxa_finalize@plt-0x5b8>
+    1b03:	48 8b 05 26 18 00 00 	mov    0x1826(%rip),%rax        # 3330 <__stack_chk_fail@plt+0x11d0>
+    1b0a:	48 85 c0             	test   %rax,%rax
+    1b0d:	74 09                	je     1b18 <__cxa_finalize@plt-0x5b8>
+    1b0f:	ff e0                	jmp    *%rax
+    1b11:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1b18:	c3                   	ret
+    1b19:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1b20:	48 8d 3d 49 28 00 00 	lea    0x2849(%rip),%rdi        # 4370 <__stack_chk_fail@plt+0x2210>
+    1b27:	48 8d 35 42 28 00 00 	lea    0x2842(%rip),%rsi        # 4370 <__stack_chk_fail@plt+0x2210>
+    1b2e:	48 29 fe             	sub    %rdi,%rsi
+    1b31:	48 89 f0             	mov    %rsi,%rax
+    1b34:	48 c1 ee 3f          	shr    $0x3f,%rsi
+    1b38:	48 c1 f8 03          	sar    $0x3,%rax
+    1b3c:	48 01 c6             	add    %rax,%rsi
+    1b3f:	48 d1 fe             	sar    $1,%rsi
+    1b42:	74 14                	je     1b58 <__cxa_finalize@plt-0x578>
+    1b44:	48 8b 05 ed 17 00 00 	mov    0x17ed(%rip),%rax        # 3338 <__stack_chk_fail@plt+0x11d8>
+    1b4b:	48 85 c0             	test   %rax,%rax
+    1b4e:	74 08                	je     1b58 <__cxa_finalize@plt-0x578>
+    1b50:	ff e0                	jmp    *%rax
+    1b52:	66 0f 1f 44 00 00    	nopw   0x0(%rax,%rax,1)
+    1b58:	c3                   	ret
+    1b59:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1b60:	f3 0f 1e fa          	endbr64
+    1b64:	80 3d 6d 28 00 00 00 	cmpb   $0x0,0x286d(%rip)        # 43d8 <__stack_chk_fail@plt+0x2278>
+    1b6b:	75 2b                	jne    1b98 <__cxa_finalize@plt-0x538>
+    1b6d:	55                   	push   %rbp
+    1b6e:	48 83 3d ca 17 00 00 	cmpq   $0x0,0x17ca(%rip)        # 3340 <__stack_chk_fail@plt+0x11e0>
+    1b75:	00 
+    1b76:	48 89 e5             	mov    %rsp,%rbp
+    1b79:	74 0c                	je     1b87 <__cxa_finalize@plt-0x549>
+    1b7b:	48 8b 3d e6 27 00 00 	mov    0x27e6(%rip),%rdi        # 4368 <__stack_chk_fail@plt+0x2208>
+    1b82:	e8 49 05 00 00       	call   20d0 <__cxa_finalize@plt>
+    1b87:	e8 64 ff ff ff       	call   1af0 <__cxa_finalize@plt-0x5e0>
+    1b8c:	c6 05 45 28 00 00 01 	movb   $0x1,0x2845(%rip)        # 43d8 <__stack_chk_fail@plt+0x2278>
+    1b93:	5d                   	pop    %rbp
+    1b94:	c3                   	ret
+    1b95:	0f 1f 00             	nopl   (%rax)
+    1b98:	c3                   	ret
+    1b99:	0f 1f 80 00 00 00 00 	nopl   0x0(%rax)
+    1ba0:	f3 0f 1e fa          	endbr64
+    1ba4:	e9 77 ff ff ff       	jmp    1b20 <__cxa_finalize@plt-0x5b0>
+    1ba9:	cc                   	int3
+    1baa:	cc                   	int3
+    1bab:	cc                   	int3
+    1bac:	cc                   	int3
+    1bad:	cc                   	int3
+    1bae:	cc                   	int3
+    1baf:	cc                   	int3
+    1bb0:	55                   	push   %rbp
+    1bb1:	48 89 e5             	mov    %rsp,%rbp
+    1bb4:	41 57                	push   %r15
+    1bb6:	41 56                	push   %r14
+    1bb8:	41 55                	push   %r13
+    1bba:	41 54                	push   %r12
+    1bbc:	53                   	push   %rbx
+    1bbd:	48 81 ec 88 30 00 00 	sub    $0x3088,%rsp
+    1bc4:	48 89 f3             	mov    %rsi,%rbx
+    1bc7:	41 89 fe             	mov    %edi,%r14d
+    1bca:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+    1bd1:	00 00 
+    1bd3:	48 89 45 d0          	mov    %rax,-0x30(%rbp)
+    1bd7:	48 8b 05 6a 17 00 00 	mov    0x176a(%rip),%rax        # 3348 <__stack_chk_fail@plt+0x11e8>
+    1bde:	48 8b 38             	mov    (%rax),%rdi
+    1be1:	31 f6                	xor    %esi,%esi
+    1be3:	ba 02 00 00 00       	mov    $0x2,%edx
+    1be8:	31 c9                	xor    %ecx,%ecx
+    1bea:	e8 f1 04 00 00       	call   20e0 <setvbuf@plt>
+    1bef:	48 8b 05 5a 17 00 00 	mov    0x175a(%rip),%rax        # 3350 <__stack_chk_fail@plt+0x11f0>
+    1bf6:	48 8b 38             	mov    (%rax),%rdi
+    1bf9:	31 f6                	xor    %esi,%esi
+    1bfb:	ba 02 00 00 00       	mov    $0x2,%edx
+    1c00:	31 c9                	xor    %ecx,%ecx
+    1c02:	e8 d9 04 00 00       	call   20e0 <setvbuf@plt>
+    1c07:	4c 8b 3d 4a 17 00 00 	mov    0x174a(%rip),%r15        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1c0e:	49 8b 3f             	mov    (%r15),%rdi
+    1c11:	31 f6                	xor    %esi,%esi
+    1c13:	ba 02 00 00 00       	mov    $0x2,%edx
+    1c18:	31 c9                	xor    %ecx,%ecx
+    1c1a:	e8 c1 04 00 00       	call   20e0 <setvbuf@plt>
+    1c1f:	41 83 fe 01          	cmp    $0x1,%r14d
+    1c23:	0f 8e 20 03 00 00    	jle    1f49 <__cxa_finalize@plt-0x187>
+    1c29:	48 8d bd d0 df ff ff 	lea    -0x2030(%rbp),%rdi
+    1c30:	ba 00 20 00 00       	mov    $0x2000,%edx
+    1c35:	31 f6                	xor    %esi,%esi
+    1c37:	e8 b4 04 00 00       	call   20f0 <memset@plt>
+    1c3c:	48 8d bd d0 d7 ff ff 	lea    -0x2830(%rbp),%rdi
+    1c43:	ba 00 08 00 00       	mov    $0x800,%edx
+    1c48:	31 f6                	xor    %esi,%esi
+    1c4a:	e8 a1 04 00 00       	call   20f0 <memset@plt>
+    1c4f:	48 8d bd d0 cf ff ff 	lea    -0x3030(%rbp),%rdi
+    1c56:	ba 00 08 00 00       	mov    $0x800,%edx
+    1c5b:	31 f6                	xor    %esi,%esi
+    1c5d:	e8 8e 04 00 00       	call   20f0 <memset@plt>
+    1c62:	48 8b 7b 08          	mov    0x8(%rbx),%rdi
+    1c66:	48 8d 35 dd ec ff ff 	lea    -0x1323(%rip),%rsi        # 94a <__cxa_finalize@plt-0x1786>
+    1c6d:	e8 8e 04 00 00       	call   2100 <fopen64@plt>
+    1c72:	48 85 c0             	test   %rax,%rax
+    1c75:	0f 84 dd 02 00 00    	je     1f58 <__cxa_finalize@plt-0x178>
+    1c7b:	49 89 c6             	mov    %rax,%r14
+    1c7e:	31 db                	xor    %ebx,%ebx
+    1c80:	48 8d 3c 2b          	lea    (%rbx,%rbp,1),%rdi
+    1c84:	48 81 c7 d0 df ff ff 	add    $0xffffffffffffdfd0,%rdi
+    1c8b:	be 08 00 00 00       	mov    $0x8,%esi
+    1c90:	ba 01 00 00 00       	mov    $0x1,%edx
+    1c95:	4c 89 f1             	mov    %r14,%rcx
+    1c98:	e8 73 04 00 00       	call   2110 <fread@plt>
+    1c9d:	48 83 f8 01          	cmp    $0x1,%rax
+    1ca1:	75 10                	jne    1cb3 <__cxa_finalize@plt-0x41d>
+    1ca3:	48 8d 43 08          	lea    0x8(%rbx),%rax
+    1ca7:	48 81 fb f8 1f 00 00 	cmp    $0x1ff8,%rbx
+    1cae:	48 89 c3             	mov    %rax,%rbx
+    1cb1:	75 cd                	jne    1c80 <__cxa_finalize@plt-0x450>
+    1cb3:	4c 89 f7             	mov    %r14,%rdi
+    1cb6:	e8 65 04 00 00       	call   2120 <fclose@plt>
+    1cbb:	45 31 f6             	xor    %r14d,%r14d
+    1cbe:	4c 8d 3d 5f eb ff ff 	lea    -0x14a1(%rip),%r15        # 824 <__cxa_finalize@plt-0x18ac>
+    1cc5:	48 8d 9d 50 cf ff ff 	lea    -0x30b0(%rbp),%rbx
+    1ccc:	45 31 ed             	xor    %r13d,%r13d
+    1ccf:	45 31 e4             	xor    %r12d,%r12d
+    1cd2:	eb 19                	jmp    1ced <__cxa_finalize@plt-0x3e3>
+    1cd4:	41 ff cd             	dec    %r13d
+    1cd7:	66 0f 1f 84 00 00 00 	nopw   0x0(%rax,%rax,1)
+    1cde:	00 00 
+    1ce0:	41 81 fe ff 03 00 00 	cmp    $0x3ff,%r14d
+    1ce7:	0f 8f 3c 02 00 00    	jg     1f29 <__cxa_finalize@plt-0x1a7>
+    1ced:	49 63 c6             	movslq %r14d,%rax
+    1cf0:	41 ff c6             	inc    %r14d
+    1cf3:	8b 8c c5 d0 df ff ff 	mov    -0x2030(%rbp,%rax,8),%ecx
+    1cfa:	48 83 f9 0b          	cmp    $0xb,%rcx
+    1cfe:	77 e0                	ja     1ce0 <__cxa_finalize@plt-0x3f0>
+    1d00:	49 63 0c 8f          	movslq (%r15,%rcx,4),%rcx
+    1d04:	4c 01 f9             	add    %r15,%rcx
+    1d07:	ff e1                	jmp    *%rcx
+    1d09:	41 83 fd 01          	cmp    $0x1,%r13d
+    1d0d:	0f 8e 7a 02 00 00    	jle    1f8d <__cxa_finalize@plt-0x143>
+    1d13:	41 8d 45 ff          	lea    -0x1(%r13),%eax
+    1d17:	8b 8c 85 d0 d7 ff ff 	mov    -0x2830(%rbp,%rax,4),%ecx
+    1d1e:	41 83 c5 fe          	add    $0xfffffffe,%r13d
+    1d22:	42 01 8c ad d0 d7 ff 	add    %ecx,-0x2830(%rbp,%r13,4)
+    1d29:	ff 
+    1d2a:	e9 bc 00 00 00       	jmp    1deb <__cxa_finalize@plt-0x2e5>
+    1d2f:	45 85 ed             	test   %r13d,%r13d
+    1d32:	0f 8e b1 02 00 00    	jle    1fe9 <__cxa_finalize@plt-0xe7>
+    1d38:	41 81 fd 00 02 00 00 	cmp    $0x200,%r13d
+    1d3f:	0f 83 ec 02 00 00    	jae    2031 <__cxa_finalize@plt-0x9f>
+    1d45:	41 8d 45 ff          	lea    -0x1(%r13),%eax
+    1d49:	8b 84 85 d0 d7 ff ff 	mov    -0x2830(%rbp,%rax,4),%eax
+    1d50:	44 89 e9             	mov    %r13d,%ecx
+    1d53:	e9 15 01 00 00       	jmp    1e6d <__cxa_finalize@plt-0x263>
+    1d58:	45 85 ed             	test   %r13d,%r13d
+    1d5b:	0f 84 3f 02 00 00    	je     1fa0 <__cxa_finalize@plt-0x130>
+    1d61:	49 63 c5             	movslq %r13d,%rax
+    1d64:	8b 84 85 cc d7 ff ff 	mov    -0x2834(%rbp,%rax,4),%eax
+    1d6b:	89 85 50 cf ff ff    	mov    %eax,-0x30b0(%rbp)
+    1d71:	48 8b 05 d8 15 00 00 	mov    0x15d8(%rip),%rax        # 3350 <__stack_chk_fail@plt+0x11f0>
+    1d78:	48 8b 08             	mov    (%rax),%rcx
+    1d7b:	be 04 00 00 00       	mov    $0x4,%esi
+    1d80:	ba 01 00 00 00       	mov    $0x1,%edx
+    1d85:	48 89 df             	mov    %rbx,%rdi
+    1d88:	e8 a3 03 00 00       	call   2130 <fwrite@plt>
+    1d8d:	48 83 f8 01          	cmp    $0x1,%rax
+    1d91:	0f 84 3d ff ff ff    	je     1cd4 <__cxa_finalize@plt-0x3fc>
+    1d97:	e9 7d 02 00 00       	jmp    2019 <__cxa_finalize@plt-0xb7>
+    1d9c:	8b 84 c5 d4 df ff ff 	mov    -0x202c(%rbp,%rax,8),%eax
+    1da3:	e9 c2 00 00 00       	jmp    1e6a <__cxa_finalize@plt-0x266>
+    1da8:	45 85 e4             	test   %r12d,%r12d
+    1dab:	0f 8e 0a 02 00 00    	jle    1fbb <__cxa_finalize@plt-0x115>
+    1db1:	41 ff cc             	dec    %r12d
+    1db4:	46 8b b4 a5 d0 cf ff 	mov    -0x3030(%rbp,%r12,4),%r14d
+    1dbb:	ff 
+    1dbc:	e9 1f ff ff ff       	jmp    1ce0 <__cxa_finalize@plt-0x3f0>
+    1dc1:	41 83 fd 01          	cmp    $0x1,%r13d
+    1dc5:	0f 8e 0b 02 00 00    	jle    1fd6 <__cxa_finalize@plt-0xfa>
+    1dcb:	41 8d 45 ff          	lea    -0x1(%r13),%eax
+    1dcf:	41 83 c5 fe          	add    $0xfffffffe,%r13d
+    1dd3:	42 8b 8c ad d0 d7 ff 	mov    -0x2830(%rbp,%r13,4),%ecx
+    1dda:	ff 
+    1ddb:	0f af 8c 85 d0 d7 ff 	imul   -0x2830(%rbp,%rax,4),%ecx
+    1de2:	ff 
+    1de3:	42 89 8c ad d0 d7 ff 	mov    %ecx,-0x2830(%rbp,%r13,4)
+    1dea:	ff 
+    1deb:	41 89 c5             	mov    %eax,%r13d
+    1dee:	e9 ed fe ff ff       	jmp    1ce0 <__cxa_finalize@plt-0x3f0>
+    1df3:	49 63 c5             	movslq %r13d,%rax
+    1df6:	41 ff cd             	dec    %r13d
+    1df9:	44 8b b4 85 cc d7 ff 	mov    -0x2834(%rbp,%rax,4),%r14d
+    1e00:	ff 
+    1e01:	e9 da fe ff ff       	jmp    1ce0 <__cxa_finalize@plt-0x3f0>
+    1e06:	41 81 fc 00 02 00 00 	cmp    $0x200,%r12d
+    1e0d:	0f 8d ee 01 00 00    	jge    2001 <__cxa_finalize@plt-0xcf>
+    1e13:	49 63 c5             	movslq %r13d,%rax
+    1e16:	41 ff cd             	dec    %r13d
+    1e19:	49 63 cc             	movslq %r12d,%rcx
+    1e1c:	44 89 b4 8d d0 cf ff 	mov    %r14d,-0x3030(%rbp,%rcx,4)
+    1e23:	ff 
+    1e24:	44 8b b4 85 cc d7 ff 	mov    -0x2834(%rbp,%rax,4),%r14d
+    1e2b:	ff 
+    1e2c:	41 ff c4             	inc    %r12d
+    1e2f:	e9 ac fe ff ff       	jmp    1ce0 <__cxa_finalize@plt-0x3f0>
+    1e34:	c7 85 50 cf ff ff 00 	movl   $0x0,-0x30b0(%rbp)
+    1e3b:	00 00 00 
+    1e3e:	48 8b 05 03 15 00 00 	mov    0x1503(%rip),%rax        # 3348 <__stack_chk_fail@plt+0x11e8>
+    1e45:	48 8b 08             	mov    (%rax),%rcx
+    1e48:	be 04 00 00 00       	mov    $0x4,%esi
+    1e4d:	ba 01 00 00 00       	mov    $0x1,%edx
+    1e52:	48 89 df             	mov    %rbx,%rdi
+    1e55:	e8 b6 02 00 00       	call   2110 <fread@plt>
+    1e5a:	48 83 f8 01          	cmp    $0x1,%rax
+    1e5e:	0f 85 0e 01 00 00    	jne    1f72 <__cxa_finalize@plt-0x15e>
+    1e64:	8b 85 50 cf ff ff    	mov    -0x30b0(%rbp),%eax
+    1e6a:	49 63 cd             	movslq %r13d,%rcx
+    1e6d:	41 ff c5             	inc    %r13d
+    1e70:	89 84 8d d0 d7 ff ff 	mov    %eax,-0x2830(%rbp,%rcx,4)
+    1e77:	e9 64 fe ff ff       	jmp    1ce0 <__cxa_finalize@plt-0x3f0>
+    1e7c:	49 63 c5             	movslq %r13d,%rax
+    1e7f:	8b 84 85 cc d7 ff ff 	mov    -0x2834(%rbp,%rax,4),%eax
+    1e86:	e9 e3 01 00 00       	jmp    206e <__cxa_finalize@plt-0x62>
+    1e8b:	48 8d 3d bb ea ff ff 	lea    -0x1545(%rip),%rdi        # 94d <__cxa_finalize@plt-0x1783>
+    1e92:	48 8d 35 b1 ea ff ff 	lea    -0x154f(%rip),%rsi        # 94a <__cxa_finalize@plt-0x1786>
+    1e99:	e8 62 02 00 00       	call   2100 <fopen64@plt>
+    1e9e:	48 85 c0             	test   %rax,%rax
+    1ea1:	0f 84 a2 01 00 00    	je     2049 <__cxa_finalize@plt-0x87>
+    1ea7:	48 89 c3             	mov    %rax,%rbx
+    1eaa:	0f 57 c0             	xorps  %xmm0,%xmm0
+    1ead:	0f 29 85 c0 cf ff ff 	movaps %xmm0,-0x3040(%rbp)
+    1eb4:	0f 29 85 b0 cf ff ff 	movaps %xmm0,-0x3050(%rbp)
+    1ebb:	0f 29 85 a0 cf ff ff 	movaps %xmm0,-0x3060(%rbp)
+    1ec2:	0f 29 85 90 cf ff ff 	movaps %xmm0,-0x3070(%rbp)
+    1ec9:	0f 29 85 80 cf ff ff 	movaps %xmm0,-0x3080(%rbp)
+    1ed0:	0f 29 85 70 cf ff ff 	movaps %xmm0,-0x3090(%rbp)
+    1ed7:	0f 29 85 60 cf ff ff 	movaps %xmm0,-0x30a0(%rbp)
+    1ede:	0f 29 85 50 cf ff ff 	movaps %xmm0,-0x30b0(%rbp)
+    1ee5:	4c 8d b5 50 cf ff ff 	lea    -0x30b0(%rbp),%r14
+    1eec:	be 01 00 00 00       	mov    $0x1,%esi
+    1ef1:	ba 7f 00 00 00       	mov    $0x7f,%edx
+    1ef6:	4c 89 f7             	mov    %r14,%rdi
+    1ef9:	48 89 c1             	mov    %rax,%rcx
+    1efc:	e8 0f 02 00 00       	call   2110 <fread@plt>
+    1f01:	c6 84 05 50 cf ff ff 	movb   $0x0,-0x30b0(%rbp,%rax,1)
+    1f08:	00 
+    1f09:	48 89 df             	mov    %rbx,%rdi
+    1f0c:	e8 0f 02 00 00       	call   2120 <fclose@plt>
+    1f11:	48 8d 3d f7 ea ff ff 	lea    -0x1509(%rip),%rdi        # a0f <__cxa_finalize@plt-0x16c1>
+    1f18:	4c 89 f6             	mov    %r14,%rsi
+    1f1b:	31 c0                	xor    %eax,%eax
+    1f1d:	e8 1e 02 00 00       	call   2140 <printf@plt>
+    1f22:	31 c0                	xor    %eax,%eax
+    1f24:	e9 45 01 00 00       	jmp    206e <__cxa_finalize@plt-0x62>
+    1f29:	48 8b 05 28 14 00 00 	mov    0x1428(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1f30:	48 8b 38             	mov    (%rax),%rdi
+    1f33:	48 8d 35 42 ea ff ff 	lea    -0x15be(%rip),%rsi        # 97c <__cxa_finalize@plt-0x1754>
+    1f3a:	44 89 f2             	mov    %r14d,%edx
+    1f3d:	31 c0                	xor    %eax,%eax
+    1f3f:	e8 0c 02 00 00       	call   2150 <fprintf@plt>
+    1f44:	e9 20 01 00 00       	jmp    2069 <__cxa_finalize@plt-0x67>
+    1f49:	49 8b 3f             	mov    (%r15),%rdi
+    1f4c:	48 8b 13             	mov    (%rbx),%rdx
+    1f4f:	48 8d 35 51 ea ff ff 	lea    -0x15af(%rip),%rsi        # 9a7 <__cxa_finalize@plt-0x1729>
+    1f56:	eb 0e                	jmp    1f66 <__cxa_finalize@plt-0x16a>
+    1f58:	49 8b 3f             	mov    (%r15),%rdi
+    1f5b:	48 8b 53 08          	mov    0x8(%rbx),%rdx
+    1f5f:	48 8d 35 f5 e9 ff ff 	lea    -0x160b(%rip),%rsi        # 95b <__cxa_finalize@plt-0x1775>
+    1f66:	31 c0                	xor    %eax,%eax
+    1f68:	e8 e3 01 00 00       	call   2150 <fprintf@plt>
+    1f6d:	e9 f7 00 00 00       	jmp    2069 <__cxa_finalize@plt-0x67>
+    1f72:	48 8b 05 df 13 00 00 	mov    0x13df(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1f79:	48 8b 08             	mov    (%rax),%rcx
+    1f7c:	48 8d 3d 3f ea ff ff 	lea    -0x15c1(%rip),%rdi        # 9c2 <__cxa_finalize@plt-0x170e>
+    1f83:	be 2a 00 00 00       	mov    $0x2a,%esi
+    1f88:	e9 d2 00 00 00       	jmp    205f <__cxa_finalize@plt-0x71>
+    1f8d:	48 8b 05 c4 13 00 00 	mov    0x13c4(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1f94:	48 8b 08             	mov    (%rax),%rcx
+    1f97:	48 8d 3d b6 e8 ff ff 	lea    -0x174a(%rip),%rdi        # 854 <__cxa_finalize@plt-0x187c>
+    1f9e:	eb 5a                	jmp    1ffa <__cxa_finalize@plt-0xd6>
+    1fa0:	48 8b 05 b1 13 00 00 	mov    0x13b1(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1fa7:	48 8b 08             	mov    (%rax),%rcx
+    1faa:	48 8d 3d 3c ea ff ff 	lea    -0x15c4(%rip),%rdi        # 9ed <__cxa_finalize@plt-0x16e3>
+    1fb1:	be 21 00 00 00       	mov    $0x21,%esi
+    1fb6:	e9 a4 00 00 00       	jmp    205f <__cxa_finalize@plt-0x71>
+    1fbb:	48 8b 05 96 13 00 00 	mov    0x1396(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1fc2:	48 8b 08             	mov    (%rax),%rcx
+    1fc5:	48 8d 3d f3 e8 ff ff 	lea    -0x170d(%rip),%rdi        # 8bf <__cxa_finalize@plt-0x1811>
+    1fcc:	be 24 00 00 00       	mov    $0x24,%esi
+    1fd1:	e9 89 00 00 00       	jmp    205f <__cxa_finalize@plt-0x71>
+    1fd6:	48 8b 05 7b 13 00 00 	mov    0x137b(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1fdd:	48 8b 08             	mov    (%rax),%rcx
+    1fe0:	48 8d 3d fd e8 ff ff 	lea    -0x1703(%rip),%rdi        # 8e4 <__cxa_finalize@plt-0x17ec>
+    1fe7:	eb 11                	jmp    1ffa <__cxa_finalize@plt-0xd6>
+    1fe9:	48 8b 05 68 13 00 00 	mov    0x1368(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    1ff0:	48 8b 08             	mov    (%rax),%rcx
+    1ff3:	48 8d 3d 1f ea ff ff 	lea    -0x15e1(%rip),%rdi        # a19 <__cxa_finalize@plt-0x16b7>
+    1ffa:	be 1f 00 00 00       	mov    $0x1f,%esi
+    1fff:	eb 5e                	jmp    205f <__cxa_finalize@plt-0x71>
+    2001:	48 8b 05 50 13 00 00 	mov    0x1350(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    2008:	48 8b 08             	mov    (%rax),%rcx
+    200b:	48 8d 3d f2 e8 ff ff 	lea    -0x170e(%rip),%rdi        # 904 <__cxa_finalize@plt-0x17cc>
+    2012:	be 24 00 00 00       	mov    $0x24,%esi
+    2017:	eb 46                	jmp    205f <__cxa_finalize@plt-0x71>
+    2019:	48 8b 05 38 13 00 00 	mov    0x1338(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    2020:	48 8b 08             	mov    (%rax),%rcx
+    2023:	48 8d 3d 4a e8 ff ff 	lea    -0x17b6(%rip),%rdi        # 874 <__cxa_finalize@plt-0x185c>
+    202a:	be 2b 00 00 00       	mov    $0x2b,%esi
+    202f:	eb 2e                	jmp    205f <__cxa_finalize@plt-0x71>
+    2031:	48 8b 05 20 13 00 00 	mov    0x1320(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    2038:	48 8b 08             	mov    (%rax),%rcx
+    203b:	48 8d 3d 5e e8 ff ff 	lea    -0x17a2(%rip),%rdi        # 8a0 <__cxa_finalize@plt-0x1830>
+    2042:	be 1e 00 00 00       	mov    $0x1e,%esi
+    2047:	eb 16                	jmp    205f <__cxa_finalize@plt-0x71>
+    2049:	48 8b 05 08 13 00 00 	mov    0x1308(%rip),%rax        # 3358 <__stack_chk_fail@plt+0x11f8>
+    2050:	48 8b 08             	mov    (%rax),%rcx
+    2053:	48 8d 3d cf e8 ff ff 	lea    -0x1731(%rip),%rdi        # 929 <__cxa_finalize@plt-0x17a7>
+    205a:	be 20 00 00 00       	mov    $0x20,%esi
+    205f:	ba 01 00 00 00       	mov    $0x1,%edx
+    2064:	e8 c7 00 00 00       	call   2130 <fwrite@plt>
+    2069:	b8 01 00 00 00       	mov    $0x1,%eax
+    206e:	64 48 8b 0c 25 28 00 	mov    %fs:0x28,%rcx
+    2075:	00 00 
+    2077:	48 3b 4d d0          	cmp    -0x30(%rbp),%rcx
+    207b:	75 12                	jne    208f <__cxa_finalize@plt-0x41>
+    207d:	48 81 c4 88 30 00 00 	add    $0x3088,%rsp
+    2084:	5b                   	pop    %rbx
+    2085:	41 5c                	pop    %r12
+    2087:	41 5d                	pop    %r13
+    2089:	41 5e                	pop    %r14
+    208b:	41 5f                	pop    %r15
+    208d:	5d                   	pop    %rbp
+    208e:	c3                   	ret
+    208f:	e8 cc 00 00 00       	call   2160 <__stack_chk_fail@plt>
+
+Disassembly of section .init:
+
+0000000000002094 <.init>:
+    2094:	f3 0f 1e fa          	endbr64
+    2098:	48 83 ec 08          	sub    $0x8,%rsp
+    209c:	48 8b 05 85 12 00 00 	mov    0x1285(%rip),%rax        # 3328 <__stack_chk_fail@plt+0x11c8>
+    20a3:	48 85 c0             	test   %rax,%rax
+    20a6:	74 02                	je     20aa <__cxa_finalize@plt-0x26>
+    20a8:	ff d0                	call   *%rax
+    20aa:	48 83 c4 08          	add    $0x8,%rsp
+    20ae:	c3                   	ret
+
+Disassembly of section .fini:
+
+00000000000020b0 <.fini>:
+    20b0:	f3 0f 1e fa          	endbr64
+    20b4:	48 83 ec 08          	sub    $0x8,%rsp
+    20b8:	48 83 c4 08          	add    $0x8,%rsp
+    20bc:	c3                   	ret
+
+Disassembly of section .plt:
+
+00000000000020c0 <__cxa_finalize@plt-0x10>:
+    20c0:	ff 35 b2 22 00 00    	push   0x22b2(%rip)        # 4378 <__stack_chk_fail@plt+0x2218>
+    20c6:	ff 25 b4 22 00 00    	jmp    *0x22b4(%rip)        # 4380 <__stack_chk_fail@plt+0x2220>
+    20cc:	0f 1f 40 00          	nopl   0x0(%rax)
+
+00000000000020d0 <__cxa_finalize@plt>:
+    20d0:	ff 25 b2 22 00 00    	jmp    *0x22b2(%rip)        # 4388 <__stack_chk_fail@plt+0x2228>
+    20d6:	68 00 00 00 00       	push   $0x0
+    20db:	e9 e0 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+00000000000020e0 <setvbuf@plt>:
+    20e0:	ff 25 aa 22 00 00    	jmp    *0x22aa(%rip)        # 4390 <__stack_chk_fail@plt+0x2230>
+    20e6:	68 01 00 00 00       	push   $0x1
+    20eb:	e9 d0 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+00000000000020f0 <memset@plt>:
+    20f0:	ff 25 a2 22 00 00    	jmp    *0x22a2(%rip)        # 4398 <__stack_chk_fail@plt+0x2238>
+    20f6:	68 02 00 00 00       	push   $0x2
+    20fb:	e9 c0 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002100 <fopen64@plt>:
+    2100:	ff 25 9a 22 00 00    	jmp    *0x229a(%rip)        # 43a0 <__stack_chk_fail@plt+0x2240>
+    2106:	68 03 00 00 00       	push   $0x3
+    210b:	e9 b0 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002110 <fread@plt>:
+    2110:	ff 25 92 22 00 00    	jmp    *0x2292(%rip)        # 43a8 <__stack_chk_fail@plt+0x2248>
+    2116:	68 04 00 00 00       	push   $0x4
+    211b:	e9 a0 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002120 <fclose@plt>:
+    2120:	ff 25 8a 22 00 00    	jmp    *0x228a(%rip)        # 43b0 <__stack_chk_fail@plt+0x2250>
+    2126:	68 05 00 00 00       	push   $0x5
+    212b:	e9 90 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002130 <fwrite@plt>:
+    2130:	ff 25 82 22 00 00    	jmp    *0x2282(%rip)        # 43b8 <__stack_chk_fail@plt+0x2258>
+    2136:	68 06 00 00 00       	push   $0x6
+    213b:	e9 80 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002140 <printf@plt>:
+    2140:	ff 25 7a 22 00 00    	jmp    *0x227a(%rip)        # 43c0 <__stack_chk_fail@plt+0x2260>
+    2146:	68 07 00 00 00       	push   $0x7
+    214b:	e9 70 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002150 <fprintf@plt>:
+    2150:	ff 25 72 22 00 00    	jmp    *0x2272(%rip)        # 43c8 <__stack_chk_fail@plt+0x2268>
+    2156:	68 08 00 00 00       	push   $0x8
+    215b:	e9 60 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
+
+0000000000002160 <__stack_chk_fail@plt>:
+    2160:	ff 25 6a 22 00 00    	jmp    *0x226a(%rip)        # 43d0 <__stack_chk_fail@plt+0x2270>
+    2166:	68 09 00 00 00       	push   $0x9
+    216b:	e9 50 ff ff ff       	jmp    20c0 <__cxa_finalize@plt-0x10>
