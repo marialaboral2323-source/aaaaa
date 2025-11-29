@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Play</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+</head>
+<body>
+    <main class="main-content">
+        
+<div class="game-container">
+    <div class="game-header">
+        <div class="game-info">
+            <div class="score-display">
+                <span class="label">Score:</span>
+                <span id="score">0</span>
+            </div>
+            <div class="high-score-display">
+                <span class="label">High Score:</span>
+                <span id="high-score">0</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flag Display Card (hidden by default) -->
+    <div id="flag-card" class="flag-card hidden">
+        <div class="flag-content">
+            <h3>🎉 Challenge Completed!</h3>
+            <p class="flag-label">Your Flag:</p>
+            <code id="flag-text" class="flag-text"></code>
+            <button id="copy-flag-btn" class="btn btn-primary btn-small">Copy Flag</button>
+        </div>
+    </div>
+
+    <div class="game-area">
+        <canvas id="game-canvas" width="400" height="400"></canvas>
+        
+        <div id="game-start-overlay" class="game-start-overlay">
+            <div class="start-overlay-content">
+                <h2>🐍 Ready to Play?</h2>
+                <div class="start-overlay-buttons">
+                    <button id="start-btn" class="btn btn-primary btn-overlay">Start Game</button>
+                    <a href="/" class="btn btn-secondary btn-overlay">Back to Home</a>
+                </div>
+            </div>
+        </div>
+        <div id="game-over-screen" class="game-over hidden">
+            <div class="game-over-content">
+                <!-- Score Submission Screen (shown first if high score) -->
+                <div id="score-submission-screen" class="score-submission-screen hidden">
+                    <h2>🎉 New High Score!</h2>
+                    <div class="final-score-display">
+                        <span class="score-label">Your Score</span>
+                        <span id="final-score-submit" class="score-value">0</span>
+                    </div>
+                    <div class="high-score-message">
+                        <p>Submit your score to the leaderboard?</p>
+                    </div>
+                    <div class="name-input-section">
+                        <input type="text" id="player-name" class="name-input" placeholder="Enter your name" maxlength="50">
+                        <div class="upload-buttons">
+                            <button id="submit-score-btn" class="btn btn-primary btn-upload">Submit Score</button>
+                            <button id="skip-upload-btn" class="btn btn-secondary btn-upload">Skip</button>
+                        </div>
+                    </div>
+                    <div id="upload-status" class="upload-status hidden"></div>
+                </div>
+                
+                <!-- Simple Navigation Screen (shown after submission/skip or if no high score) -->
+                <div id="navigation-screen" class="navigation-screen hidden">
+                    <h2 id="game-over-title">Game Over!</h2>
+                    <div class="final-score-display">
+                        <span class="score-label">Your Score</span>
+                        <span id="final-score" class="score-value">0</span>
+                    </div>
+                    <div class="game-over-buttons">
+                        <button id="play-again-btn" class="btn btn-primary btn-game-over">Play Again</button>
+                        <a href="/scoreboard" class="btn btn-secondary btn-game-over">Scoreboard</a>
+                        <a href="/" class="btn btn-secondary btn-game-over">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    
+<script src="/static/js/snake.js"></script>
+
+</body>
+</html>

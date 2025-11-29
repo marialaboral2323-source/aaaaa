@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game - Scoreboard</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    
+</head>
+<body>
+    <main class="main-content">
+        
+<div class="scoreboard-container">
+    <div class="scoreboard-header">
+        <h1>🏆 Leaderboard</h1>
+        <p>Top players and their highest scores</p>
+        <p>(Nothing to see here)</p>
+    </div>
+
+    <div class="scoreboard-content">
+        <div class="scoreboard-loading" id="loading">
+            <div class="loading-spinner"></div>
+            <p>Loading scores...</p>
+        </div>
+        
+        <!-- Top 3 Podium -->
+        <div class="podium-container" id="podium" style="display: none;">
+            <h2 class="podium-title">Top 3 Champions</h2>
+            <div class="podium">
+                <!-- 2nd Place -->
+                <div class="podium-place second-place" id="podium-2">
+                    <div class="podium-rank">🥈</div>
+                    <div class="podium-content">
+                        <div class="podium-name"></div>
+                        <div class="podium-score"></div>
+                    </div>
+                    <div class="podium-pedestal">2nd</div>
+                </div>
+                <!-- 1st Place -->
+                <div class="podium-place first-place" id="podium-1">
+                    <div class="podium-crown">👑</div>
+                    <div class="podium-rank">🥇</div>
+                    <div class="podium-content">
+                        <div class="podium-name"></div>
+                        <div class="podium-score"></div>
+                    </div>
+                    <div class="podium-pedestal">1st</div>
+                </div>
+                <!-- 3rd Place -->
+                <div class="podium-place third-place" id="podium-3">
+                    <div class="podium-rank">🥉</div>
+                    <div class="podium-content">
+                        <div class="podium-name"></div>
+                        <div class="podium-score"></div>
+                    </div>
+                    <div class="podium-pedestal">3rd</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="scoreboard-table-container" id="scoreboard-data" style="display: none;">
+            <h2 class="section-title">All Rankings</h2>
+            <table class="scoreboard-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Player</th>
+                        <th>Score</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody id="scores-tbody">
+                    <!-- Scores will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+
+        <div class="scoreboard-empty" id="no-scores" style="display: none;">
+            <div class="empty-state">
+                <div class="empty-icon">🐍</div>
+                <h3>No Scores Yet!</h3>
+                <p>Be the first to conquer the snake and claim your spot on the leaderboard!</p>
+                <a href="/game" class="btn btn-primary btn-large">Start Playing</a>
+            </div>
+        </div>
+
+        <div class="scoreboard-error" id="error-message" style="display: none;">
+            <div class="error-state">
+                <div class="error-icon">⚠️</div>
+                <h3>Oops! Something went wrong</h3>
+                <p>Failed to load scores. Please try again later.</p>
+                <button onclick="loadScores()" class="btn btn-secondary">Retry</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="scoreboard-actions">
+        <a href="/game" class="btn btn-primary">Play Again</a>
+        <a href="/" class="btn btn-secondary">Home</a>
+    </div>
+</div>
+
+    </main>
+
+    
+<script src="/static/js/scoreboard.js"></script>
+
+</body>
+</html>
