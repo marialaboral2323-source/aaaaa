@@ -1,0 +1,16 @@
+logs
+log
+logging
+trace
+traces
+sessions
+session
+sessionlog
+access.log
+error.log
+audit.log
+audit
+admin
+admin/log
+secrets
+secret

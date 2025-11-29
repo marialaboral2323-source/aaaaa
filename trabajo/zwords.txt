@@ -1,0 +1,10 @@
+healthz
+readyz
+livez
+statusz
+sessionz
+cookiez
+configz
+metricsz
+adminz
+whoamiz
