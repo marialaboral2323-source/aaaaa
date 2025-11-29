@@ -1,0 +1,341 @@
+0000000000011610 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)>:
+   11610:	55                   	push   %rbp
+   11611:	48 89 e5             	mov    %rsp,%rbp
+   11614:	48 81 ec a0 04 00 00 	sub    $0x4a0,%rsp
+   1161b:	48 89 bd a8 fb ff ff 	mov    %rdi,-0x458(%rbp)
+   11622:	48 89 f8             	mov    %rdi,%rax
+   11625:	48 89 85 b0 fb ff ff 	mov    %rax,-0x450(%rbp)
+   1162c:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   11633:	00 00 
+   11635:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+   11639:	48 89 bd 20 fc ff ff 	mov    %rdi,-0x3e0(%rbp)
+   11640:	48 89 b5 18 fc ff ff 	mov    %rsi,-0x3e8(%rbp)
+   11647:	48 89 95 10 fc ff ff 	mov    %rdx,-0x3f0(%rbp)
+   1164e:	48 89 8d 08 fc ff ff 	mov    %rcx,-0x3f8(%rbp)
+   11655:	c6 85 07 fc ff ff 00 	movb   $0x0,-0x3f9(%rbp)
+   1165c:	c6 85 06 fc ff ff 00 	movb   $0x0,-0x3fa(%rbp)
+   11663:	c6 85 05 fc ff ff 00 	movb   $0x0,-0x3fb(%rbp)
+   1166a:	48 8d bd 38 fc ff ff 	lea    -0x3c8(%rbp),%rdi
+   11671:	48 8d 35 b5 2c 00 00 	lea    0x2cb5(%rip),%rsi        # 1432d <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x31d>
+   11678:	e8 23 c1 ff ff       	call   d7a0 <llvm::StringRef::StringRef(char const*)@plt>
+   1167d:	48 8b bd 10 fc ff ff 	mov    -0x3f0(%rbp),%rdi
+   11684:	e8 a7 bb ff ff       	call   d230 <llvm::Value::getName() const@plt>
+   11689:	48 89 85 f0 fb ff ff 	mov    %rax,-0x410(%rbp)
+   11690:	48 89 95 f8 fb ff ff 	mov    %rdx,-0x408(%rbp)
+   11697:	48 8b bd 38 fc ff ff 	mov    -0x3c8(%rbp),%rdi
+   1169e:	48 8b b5 40 fc ff ff 	mov    -0x3c0(%rbp),%rsi
+   116a5:	48 8b 95 f0 fb ff ff 	mov    -0x410(%rbp),%rdx
+   116ac:	48 8b 8d f8 fb ff ff 	mov    -0x408(%rbp),%rcx
+   116b3:	e8 a8 c1 ff ff       	call   d860 <llvm::operator==(llvm::StringRef, llvm::StringRef)@plt>
+   116b8:	a8 01                	test   $0x1,%al
+   116ba:	75 02                	jne    116be <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0xae>
+   116bc:	eb 07                	jmp    116c5 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0xb5>
+   116be:	c6 85 07 fc ff ff 01 	movb   $0x1,-0x3f9(%rbp)
+   116c5:	c7 85 ec fb ff ff 00 	movl   $0x0,-0x414(%rbp)
+   116cc:	00 00 00 
+   116cf:	48 8b bd 10 fc ff ff 	mov    -0x3f0(%rbp),%rdi
+   116d6:	e8 35 be ff ff       	call   d510 <llvm::Function::args()@plt>
+   116db:	48 89 85 28 fc ff ff 	mov    %rax,-0x3d8(%rbp)
+   116e2:	48 89 95 30 fc ff ff 	mov    %rdx,-0x3d0(%rbp)
+   116e9:	48 8d 85 28 fc ff ff 	lea    -0x3d8(%rbp),%rax
+   116f0:	48 89 85 e0 fb ff ff 	mov    %rax,-0x420(%rbp)
+   116f7:	48 8b bd e0 fb ff ff 	mov    -0x420(%rbp),%rdi
+   116fe:	e8 9d be ff ff       	call   d5a0 <llvm::iterator_range<llvm::Argument*>::begin() const@plt>
+   11703:	48 89 85 d8 fb ff ff 	mov    %rax,-0x428(%rbp)
+   1170a:	48 8b bd e0 fb ff ff 	mov    -0x420(%rbp),%rdi
+   11711:	e8 fa bc ff ff       	call   d410 <llvm::iterator_range<llvm::Argument*>::end() const@plt>
+   11716:	48 89 85 d0 fb ff ff 	mov    %rax,-0x430(%rbp)
+   1171d:	48 8b 85 d8 fb ff ff 	mov    -0x428(%rbp),%rax
+   11724:	48 3b 85 d0 fb ff ff 	cmp    -0x430(%rbp),%rax
+   1172b:	74 4c                	je     11779 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x169>
+   1172d:	48 8b 85 d8 fb ff ff 	mov    -0x428(%rbp),%rax
+   11734:	48 89 85 c8 fb ff ff 	mov    %rax,-0x438(%rbp)
+   1173b:	48 8b bd c8 fb ff ff 	mov    -0x438(%rbp),%rdi
+   11742:	e8 09 c0 ff ff       	call   d750 <llvm::Value::getType() const@plt>
+   11747:	48 89 c7             	mov    %rax,%rdi
+   1174a:	e8 41 c9 ff ff       	call   e090 <llvm::Type::getTypeID() const@plt>
+   1174f:	83 f8 0c             	cmp    $0xc,%eax
+   11752:	75 0f                	jne    11763 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x153>
+   11754:	8b 85 ec fb ff ff    	mov    -0x414(%rbp),%eax
+   1175a:	83 c0 01             	add    $0x1,%eax
+   1175d:	89 85 ec fb ff ff    	mov    %eax,-0x414(%rbp)
+   11763:	eb 00                	jmp    11765 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x155>
+   11765:	48 8b 85 d8 fb ff ff 	mov    -0x428(%rbp),%rax
+   1176c:	48 83 c0 28          	add    $0x28,%rax
+   11770:	48 89 85 d8 fb ff ff 	mov    %rax,-0x428(%rbp)
+   11777:	eb a4                	jmp    1171d <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x10d>
+   11779:	83 bd ec fb ff ff 03 	cmpl   $0x3,-0x414(%rbp)
+   11780:	75 07                	jne    11789 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x179>
+   11782:	c6 85 06 fc ff ff 01 	movb   $0x1,-0x3fa(%rbp)
+   11789:	48 8b bd 10 fc ff ff 	mov    -0x3f0(%rbp),%rdi
+   11790:	e8 5b c2 ff ff       	call   d9f0 <llvm::Function::getReturnType() const@plt>
+   11795:	48 89 c7             	mov    %rax,%rdi
+   11798:	e8 f3 c8 ff ff       	call   e090 <llvm::Type::getTypeID() const@plt>
+   1179d:	83 f8 0e             	cmp    $0xe,%eax
+   117a0:	75 07                	jne    117a9 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x199>
+   117a2:	c6 85 05 fc ff ff 01 	movb   $0x1,-0x3fb(%rbp)
+   117a9:	f6 85 07 fc ff ff 01 	testb  $0x1,-0x3f9(%rbp)
+   117b0:	0f 84 c4 01 00 00    	je     1197a <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x36a>
+   117b6:	f6 85 06 fc ff ff 01 	testb  $0x1,-0x3fa(%rbp)
+   117bd:	0f 84 b7 01 00 00    	je     1197a <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x36a>
+   117c3:	f6 85 05 fc ff ff 01 	testb  $0x1,-0x3fb(%rbp)
+   117ca:	0f 84 aa 01 00 00    	je     1197a <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x36a>
+   117d0:	48 8d 35 68 2b 00 00 	lea    0x2b68(%rip),%rsi        # 1433f <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x32f>
+   117d7:	48 8d bd f0 fd ff ff 	lea    -0x210(%rbp),%rdi
+   117de:	48 89 bd 98 fb ff ff 	mov    %rdi,-0x468(%rbp)
+   117e5:	ba 08 00 00 00       	mov    $0x8,%edx
+   117ea:	e8 31 be ff ff       	call   d620 <std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(char const*, std::_Ios_Openmode)@plt>
+   117ef:	48 8b bd 98 fb ff ff 	mov    -0x468(%rbp),%rdi
+   117f6:	e8 d5 ba ff ff       	call   d2d0 <std::basic_ifstream<char, std::char_traits<char> >::is_open()@plt>
+   117fb:	88 85 a7 fb ff ff    	mov    %al,-0x459(%rbp)
+   11801:	eb 00                	jmp    11803 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x1f3>
+   11803:	8a 85 a7 fb ff ff    	mov    -0x459(%rbp),%al
+   11809:	a8 01                	test   $0x1,%al
+   1180b:	75 41                	jne    1184e <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x23e>
+   1180d:	eb 00                	jmp    1180f <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x1ff>
+   1180f:	e8 fc c4 ff ff       	call   dd10 <llvm::errs()@plt>
+   11814:	48 89 85 90 fb ff ff 	mov    %rax,-0x470(%rbp)
+   1181b:	eb 00                	jmp    1181d <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x20d>
+   1181d:	48 8b bd 90 fb ff ff 	mov    -0x470(%rbp),%rdi
+   11824:	48 8d 35 1d 2b 00 00 	lea    0x2b1d(%rip),%rsi        # 14348 <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x338>
+   1182b:	e8 60 c2 ff ff       	call   da90 <llvm::raw_ostream::operator<<(char const*)@plt>
+   11830:	eb 00                	jmp    11832 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x222>
+   11832:	e9 27 01 00 00       	jmp    1195e <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x34e>
+   11837:	48 89 c1             	mov    %rax,%rcx
+   1183a:	89 d0                	mov    %edx,%eax
+   1183c:	48 89 8d c0 fb ff ff 	mov    %rcx,-0x440(%rbp)
+   11843:	89 85 bc fb ff ff    	mov    %eax,-0x444(%rbp)
+   11849:	e9 1e 01 00 00       	jmp    1196c <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x35c>
+   1184e:	48 8d bd 68 fc ff ff 	lea    -0x398(%rbp),%rdi
+   11855:	e8 46 c7 ff ff       	call   dfa0 <std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::basic_stringstream()@plt>
+   1185a:	eb 00                	jmp    1185c <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x24c>
+   1185c:	48 8d 85 78 fc ff ff 	lea    -0x388(%rbp),%rax
+   11863:	48 89 85 80 fb ff ff 	mov    %rax,-0x480(%rbp)
+   1186a:	48 8d bd f0 fd ff ff 	lea    -0x210(%rbp),%rdi
+   11871:	e8 0a bf ff ff       	call   d780 <std::basic_ifstream<char, std::char_traits<char> >::rdbuf() const@plt>
+   11876:	48 89 85 88 fb ff ff 	mov    %rax,-0x478(%rbp)
+   1187d:	eb 00                	jmp    1187f <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x26f>
+   1187f:	48 8b b5 88 fb ff ff 	mov    -0x478(%rbp),%rsi
+   11886:	48 8b bd 80 fb ff ff 	mov    -0x480(%rbp),%rdi
+   1188d:	e8 6e c2 ff ff       	call   db00 <std::ostream::operator<<(std::basic_streambuf<char, std::char_traits<char> >*)@plt>
+   11892:	eb 00                	jmp    11894 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x284>
+   11894:	e8 77 c4 ff ff       	call   dd10 <llvm::errs()@plt>
+   11899:	48 89 85 78 fb ff ff 	mov    %rax,-0x488(%rbp)
+   118a0:	eb 00                	jmp    118a2 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x292>
+   118a2:	48 8b bd 78 fb ff ff 	mov    -0x488(%rbp),%rdi
+   118a9:	48 8d 35 c5 2a 00 00 	lea    0x2ac5(%rip),%rsi        # 14375 <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x365>
+   118b0:	e8 db c1 ff ff       	call   da90 <llvm::raw_ostream::operator<<(char const*)@plt>
+   118b5:	48 89 85 70 fb ff ff 	mov    %rax,-0x490(%rbp)
+   118bc:	eb 00                	jmp    118be <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x2ae>
+   118be:	48 8d bd 48 fc ff ff 	lea    -0x3b8(%rbp),%rdi
+   118c5:	48 8d b5 68 fc ff ff 	lea    -0x398(%rbp),%rsi
+   118cc:	e8 af c8 ff ff       	call   e180 <std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::str() const@plt>
+   118d1:	eb 00                	jmp    118d3 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x2c3>
+   118d3:	48 8b bd 70 fb ff ff 	mov    -0x490(%rbp),%rdi
+   118da:	48 8d b5 48 fc ff ff 	lea    -0x3b8(%rbp),%rsi
+   118e1:	e8 5a b8 ff ff       	call   d140 <llvm::raw_ostream::operator<<(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)@plt>
+   118e6:	48 89 85 68 fb ff ff 	mov    %rax,-0x498(%rbp)
+   118ed:	eb 00                	jmp    118ef <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x2df>
+   118ef:	48 8b bd 68 fb ff ff 	mov    -0x498(%rbp),%rdi
+   118f6:	48 8d 35 76 2a 00 00 	lea    0x2a76(%rip),%rsi        # 14373 <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x363>
+   118fd:	e8 8e c1 ff ff       	call   da90 <llvm::raw_ostream::operator<<(char const*)@plt>
+   11902:	eb 00                	jmp    11904 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x2f4>
+   11904:	48 8d bd 48 fc ff ff 	lea    -0x3b8(%rbp),%rdi
+   1190b:	e8 f0 bf ff ff       	call   d900 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   11910:	48 8d bd 68 fc ff ff 	lea    -0x398(%rbp),%rdi
+   11917:	e8 f4 c7 ff ff       	call   e110 <std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()@plt>
+   1191c:	eb 40                	jmp    1195e <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x34e>
+   1191e:	48 89 c1             	mov    %rax,%rcx
+   11921:	89 d0                	mov    %edx,%eax
+   11923:	48 89 8d c0 fb ff ff 	mov    %rcx,-0x440(%rbp)
+   1192a:	89 85 bc fb ff ff    	mov    %eax,-0x444(%rbp)
+   11930:	eb 1e                	jmp    11950 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x340>
+   11932:	48 89 c1             	mov    %rax,%rcx
+   11935:	89 d0                	mov    %edx,%eax
+   11937:	48 89 8d c0 fb ff ff 	mov    %rcx,-0x440(%rbp)
+   1193e:	89 85 bc fb ff ff    	mov    %eax,-0x444(%rbp)
+   11944:	48 8d bd 48 fc ff ff 	lea    -0x3b8(%rbp),%rdi
+   1194b:	e8 b0 bf ff ff       	call   d900 <std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string()@plt>
+   11950:	48 8d bd 68 fc ff ff 	lea    -0x398(%rbp),%rdi
+   11957:	e8 b4 c7 ff ff       	call   e110 <std::__cxx11::basic_stringstream<char, std::char_traits<char>, std::allocator<char> >::~basic_stringstream()@plt>
+   1195c:	eb 0e                	jmp    1196c <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x35c>
+   1195e:	48 8d bd f0 fd ff ff 	lea    -0x210(%rbp),%rdi
+   11965:	e8 c6 ba ff ff       	call   d430 <std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()@plt>
+   1196a:	eb 22                	jmp    1198e <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x37e>
+   1196c:	48 8d bd f0 fd ff ff 	lea    -0x210(%rbp),%rdi
+   11973:	e8 b8 ba ff ff       	call   d430 <std::basic_ifstream<char, std::char_traits<char> >::~basic_ifstream()@plt>
+   11978:	eb 42                	jmp    119bc <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x3ac>
+   1197a:	e8 91 c3 ff ff       	call   dd10 <llvm::errs()@plt>
+   1197f:	48 89 c7             	mov    %rax,%rdi
+   11982:	48 8d 35 0d 2a 00 00 	lea    0x2a0d(%rip),%rsi        # 14396 <typeinfo name for get_pass_plugin_info()::$_0::operator()(llvm::PassBuilder&) const::{lambda(llvm::PassManager<llvm::Module, llvm::AnalysisManager<llvm::Module>>&, auto:1)#1}+0x386>
+   11989:	e8 02 c1 ff ff       	call   da90 <llvm::raw_ostream::operator<<(char const*)@plt>
+   1198e:	48 8b bd a8 fb ff ff 	mov    -0x458(%rbp),%rdi
+   11995:	e8 86 c5 ff ff       	call   df20 <llvm::PreservedAnalyses::all()@plt>
+   1199a:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   119a1:	00 00 
+   119a3:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+   119a7:	48 39 c8             	cmp    %rcx,%rax
+   119aa:	75 3c                	jne    119e8 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x3d8>
+   119ac:	48 8b 85 b0 fb ff ff 	mov    -0x450(%rbp),%rax
+   119b3:	48 81 c4 a0 04 00 00 	add    $0x4a0,%rsp
+   119ba:	5d                   	pop    %rbp
+   119bb:	c3                   	ret
+   119bc:	48 8b 85 c0 fb ff ff 	mov    -0x440(%rbp),%rax
+   119c3:	48 89 85 60 fb ff ff 	mov    %rax,-0x4a0(%rbp)
+   119ca:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   119d1:	00 00 
+   119d3:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+   119d7:	48 39 c8             	cmp    %rcx,%rax
+   119da:	75 0c                	jne    119e8 <hero::custom_pass::run(llvm::Function&, llvm::AnalysisManager<llvm::Function>&)+0x3d8>
+   119dc:	48 8b bd 60 fb ff ff 	mov    -0x4a0(%rbp),%rdi
+   119e3:	e8 08 c7 ff ff       	call   e0f0 <_Unwind_Resume@plt>
+   119e8:	e8 13 ba ff ff       	call   d400 <__stack_chk_fail@plt>
+   119ed:	0f 1f 00             	nopl   (%rax)
+
+00000000000119f0 <llvm::operator==(llvm::StringRef, llvm::StringRef)>:
+   119f0:	55                   	push   %rbp
+   119f1:	48 89 e5             	mov    %rsp,%rbp
+   119f4:	48 83 ec 50          	sub    $0x50,%rsp
+   119f8:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   119ff:	00 00 
+   11a01:	48 89 45 f8          	mov    %rax,-0x8(%rbp)
+   11a05:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+   11a09:	48 89 75 f0          	mov    %rsi,-0x10(%rbp)
+   11a0d:	48 89 55 d8          	mov    %rdx,-0x28(%rbp)
+   11a11:	48 89 4d e0          	mov    %rcx,-0x20(%rbp)
+   11a15:	48 8d 7d e8          	lea    -0x18(%rbp),%rdi
+   11a19:	e8 a2 bf ff ff       	call   d9c0 <llvm::StringRef::size() const@plt>
+   11a1e:	48 89 45 c8          	mov    %rax,-0x38(%rbp)
+   11a22:	48 8d 7d d8          	lea    -0x28(%rbp),%rdi
+   11a26:	e8 95 bf ff ff       	call   d9c0 <llvm::StringRef::size() const@plt>
+   11a2b:	48 89 c1             	mov    %rax,%rcx
+   11a2e:	48 8b 45 c8          	mov    -0x38(%rbp),%rax
+   11a32:	48 39 c8             	cmp    %rcx,%rax
+   11a35:	74 06                	je     11a3d <llvm::operator==(llvm::StringRef, llvm::StringRef)+0x4d>
+   11a37:	c6 45 d7 00          	movb   $0x0,-0x29(%rbp)
+   11a3b:	eb 53                	jmp    11a90 <llvm::operator==(llvm::StringRef, llvm::StringRef)+0xa0>
+   11a3d:	48 8d 7d e8          	lea    -0x18(%rbp),%rdi
+   11a41:	e8 6a c2 ff ff       	call   dcb0 <llvm::StringRef::empty() const@plt>
+   11a46:	a8 01                	test   $0x1,%al
+   11a48:	75 02                	jne    11a4c <llvm::operator==(llvm::StringRef, llvm::StringRef)+0x5c>
+   11a4a:	eb 06                	jmp    11a52 <llvm::operator==(llvm::StringRef, llvm::StringRef)+0x62>
+   11a4c:	c6 45 d7 01          	movb   $0x1,-0x29(%rbp)
+   11a50:	eb 3e                	jmp    11a90 <llvm::operator==(llvm::StringRef, llvm::StringRef)+0xa0>
+   11a52:	48 8d 7d e8          	lea    -0x18(%rbp),%rdi
+   11a56:	e8 75 ba ff ff       	call   d4d0 <llvm::StringRef::data() const@plt>
+   11a5b:	48 89 45 b8          	mov    %rax,-0x48(%rbp)
+   11a5f:	48 8d 7d d8          	lea    -0x28(%rbp),%rdi
+   11a63:	e8 68 ba ff ff       	call   d4d0 <llvm::StringRef::data() const@plt>
+   11a68:	48 89 45 c0          	mov    %rax,-0x40(%rbp)
+   11a6c:	48 8d 7d e8          	lea    -0x18(%rbp),%rdi
+   11a70:	e8 4b bf ff ff       	call   d9c0 <llvm::StringRef::size() const@plt>
+   11a75:	48 8b 7d b8          	mov    -0x48(%rbp),%rdi
+   11a79:	48 8b 75 c0          	mov    -0x40(%rbp),%rsi
+   11a7d:	48 89 c2             	mov    %rax,%rdx
+   11a80:	e8 4b bc ff ff       	call   d6d0 <memcmp@plt>
+   11a85:	83 f8 00             	cmp    $0x0,%eax
+   11a88:	0f 94 c0             	sete   %al
+   11a8b:	24 01                	and    $0x1,%al
+   11a8d:	88 45 d7             	mov    %al,-0x29(%rbp)
+   11a90:	8a 45 d7             	mov    -0x29(%rbp),%al
+   11a93:	88 45 b7             	mov    %al,-0x49(%rbp)
+   11a96:	64 48 8b 04 25 28 00 	mov    %fs:0x28,%rax
+   11a9d:	00 00 
+   11a9f:	48 8b 4d f8          	mov    -0x8(%rbp),%rcx
+   11aa3:	48 39 c8             	cmp    %rcx,%rax
+   11aa6:	75 0b                	jne    11ab3 <llvm::operator==(llvm::StringRef, llvm::StringRef)+0xc3>
+   11aa8:	8a 45 b7             	mov    -0x49(%rbp),%al
+   11aab:	24 01                	and    $0x1,%al
+   11aad:	48 83 c4 50          	add    $0x50,%rsp
+   11ab1:	5d                   	pop    %rbp
+   11ab2:	c3                   	ret
+   11ab3:	e8 48 b9 ff ff       	call   d400 <__stack_chk_fail@plt>
+   11ab8:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+   11abf:	00 
+
+0000000000011ac0 <llvm::Function::args()>:
+   11ac0:	55                   	push   %rbp
+   11ac1:	48 89 e5             	mov    %rsp,%rbp
+   11ac4:	48 83 ec 30          	sub    $0x30,%rsp
+   11ac8:	48 89 7d e8          	mov    %rdi,-0x18(%rbp)
+   11acc:	48 8b 7d e8          	mov    -0x18(%rbp),%rdi
+   11ad0:	48 89 7d d8          	mov    %rdi,-0x28(%rbp)
+   11ad4:	e8 57 ba ff ff       	call   d530 <llvm::Function::arg_begin()@plt>
+   11ad9:	48 8b 7d d8          	mov    -0x28(%rbp),%rdi
+   11add:	48 89 45 e0          	mov    %rax,-0x20(%rbp)
+   11ae1:	e8 7a c3 ff ff       	call   de60 <llvm::Function::arg_end()@plt>
+   11ae6:	48 8b 7d e0          	mov    -0x20(%rbp),%rdi
+   11aea:	48 89 c6             	mov    %rax,%rsi
+   11aed:	e8 de b8 ff ff       	call   d3d0 <llvm::iterator_range<llvm::Argument*> llvm::make_range<llvm::Argument*>(llvm::Argument*, llvm::Argument*)@plt>
+   11af2:	48 89 45 f0          	mov    %rax,-0x10(%rbp)
+   11af6:	48 89 55 f8          	mov    %rdx,-0x8(%rbp)
+   11afa:	48 8b 45 f0          	mov    -0x10(%rbp),%rax
+   11afe:	48 8b 55 f8          	mov    -0x8(%rbp),%rdx
+   11b02:	48 83 c4 30          	add    $0x30,%rsp
+   11b06:	5d                   	pop    %rbp
+   11b07:	c3                   	ret
+   11b08:	0f 1f 84 00 00 00 00 	nopl   0x0(%rax,%rax,1)
+   11b0f:	00 
+
+0000000000011b10 <llvm::iterator_range<llvm::Argument*>::begin() const>:
+   11b10:	55                   	push   %rbp
+   11b11:	48 89 e5             	mov    %rsp,%rbp
+   11b14:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   11b18:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   11b1c:	48 8b 00             	mov    (%rax),%rax
+   11b1f:	5d                   	pop    %rbp
+   11b20:	c3                   	ret
+   11b21:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   11b28:	00 00 00 
+   11b2b:	0f 1f 44 00 00       	nopl   0x0(%rax,%rax,1)
+
+0000000000011b30 <llvm::iterator_range<llvm::Argument*>::end() const>:
+   11b30:	55                   	push   %rbp
+   11b31:	48 89 e5             	mov    %rsp,%rbp
+   11b34:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   11b38:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   11b3c:	48 8b 40 08          	mov    0x8(%rax),%rax
+   11b40:	5d                   	pop    %rbp
+   11b41:	c3                   	ret
+   11b42:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   11b49:	00 00 00 
+   11b4c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000011b50 <llvm::Value::getType() const>:
+   11b50:	55                   	push   %rbp
+   11b51:	48 89 e5             	mov    %rsp,%rbp
+   11b54:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   11b58:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   11b5c:	48 8b 40 08          	mov    0x8(%rax),%rax
+   11b60:	5d                   	pop    %rbp
+   11b61:	c3                   	ret
+   11b62:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   11b69:	00 00 00 
+   11b6c:	0f 1f 40 00          	nopl   0x0(%rax)
+
+0000000000011b70 <llvm::Type::getTypeID() const>:
+   11b70:	55                   	push   %rbp
+   11b71:	48 89 e5             	mov    %rsp,%rbp
+   11b74:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   11b78:	48 8b 45 f8          	mov    -0x8(%rbp),%rax
+   11b7c:	8b 40 08             	mov    0x8(%rax),%eax
+   11b7f:	25 ff 00 00 00       	and    $0xff,%eax
+   11b84:	5d                   	pop    %rbp
+   11b85:	c3                   	ret
+   11b86:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   11b8d:	00 00 00 
+
+0000000000011b90 <llvm::Function::getReturnType() const>:
+   11b90:	55                   	push   %rbp
+   11b91:	48 89 e5             	mov    %rsp,%rbp
+   11b94:	48 83 ec 10          	sub    $0x10,%rsp
+   11b98:	48 89 7d f8          	mov    %rdi,-0x8(%rbp)
+   11b9c:	48 8b 7d f8          	mov    -0x8(%rbp),%rdi
+   11ba0:	e8 0b b5 ff ff       	call   d0b0 <llvm::Function::getFunctionType() const@plt>
+   11ba5:	48 89 c7             	mov    %rax,%rdi
+   11ba8:	e8 c3 c4 ff ff       	call   e070 <llvm::FunctionType::getReturnType() const@plt>
+   11bad:	48 83 c4 10          	add    $0x10,%rsp
+   11bb1:	5d                   	pop    %rbp
+   11bb2:	c3                   	ret
+   11bb3:	66 2e 0f 1f 84 00 00 	cs nopw 0x0(%rax,%rax,1)
+   11bba:	00 00 00 

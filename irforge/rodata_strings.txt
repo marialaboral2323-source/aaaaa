@@ -1,0 +1,40 @@
+
+String dump of section '.rodata':
+  [     0]  t¨ÿÿ‰¨ÿÿ¨¨ÿÿÇÿÿZZ20get_pass_plugin_infovENK3$_0clERN4llvm11PassBuilderEEUlRNS0_11PassManagerINS0_6ModuleENS0_15AnalysisManagerIS4_JEEEJEEET_E_
+  [    90]  Hero LLVM
+  [    9a]  0.0.1
+  [    a0]  vector::_M_realloc_append
+  [    ba]  /usr/bin/../lib64/gcc/x86_64-pc-linux-gnu/15.2.1/../../../../include/c++/15.2.1/bits/stl_vector.h
+  [   11c]  reference std::vector<std::unique_ptr<llvm::detail::PassConcept<llvm::Module, llvm::AnalysisManager<Module>>>>::back() [_Tp = std::unique_ptr<llvm::detail::PassConcept<llvm::Module, llvm::AnalysisManager<Module>>>, _Alloc = std::allocator<std::unique_ptr<llvm::detail::PassConcept<llvm::Module, llvm::AnalysisManager<Module>>>>]
+  [   265]  !this->empty()
+  [   274]  llvm::
+  [   27b]  StringRef llvm::getTypeName() [DesiredTypeName = llvm::ModuleToFunctionPassAdaptor]
+  [   2cf]  DesiredTypeName = 
+  [   2e2]  basic_string_view::substr
+  [   2fc]  %s: __pos (which is %zu) > __size (which is %zu)
+  [   32d]  SWORD_OF_THE_HERO
+  [   33f]  flag.txt
+  [   348]  [-] Call an admin it shouldn't be the case \n
+  [   375]  [+] Good job here is your flag: 
+  [   396]  [-] Nope\n
+  [   3a0]  cast<Ty>() argument of incompatible type!
+  [   3ca]  isa<To>(Val) && "cast<Ty>() argument of incompatible type!"
+  [   406]  /usr/include/llvm/Support/Casting.h
+  [   42a]  decltype(auto) llvm::cast(From *) [To = llvm::FunctionType, From = llvm::Type]
+  [   479]  isa<> used on a null pointer
+  [   496]  Val && "isa<> used on a null pointer"
+  [   4bc]  static bool llvm::isa_impl_cl<llvm::FunctionType, const llvm::Type *>::doit(const From *) [To = llvm::FunctionType, From = const llvm::Type *]
+  [   54b]  Initial size must be a power of two!
+  [   570]  llvm::has_single_bit(SmallSize) && "Initial size must be a power of two!"
+  [   5ba]  /usr/include/llvm/ADT/SmallPtrSet.h
+  [   5de]  llvm::SmallPtrSetImplBase::SmallPtrSetImplBase(const void **, unsigned int)
+  [   62a]  Bucket >= End
+  [   638]  void llvm::SmallPtrSetIteratorImpl::RetreatIfNotValid()
+  [   670]  Bucket <= End
+  [   67e]  void llvm::SmallPtrSetIteratorImpl::AdvanceIfNotValid()
+  [   6b6]  StringRef llvm::getTypeName() [DesiredTypeName = hero::custom_pass]
+  [   6fa]  N4llvm6detail9PassModelINS_6ModuleENS_27ModuleToFunctionPassAdaptorENS_15AnalysisManagerIS2_JEEEJEEE
+  [   75f]  N4llvm6detail11PassConceptINS_6ModuleENS_15AnalysisManagerIS2_JEEEJEEE
+  [   7a6]  N4llvm6detail9PassModelINS_8FunctionEN4hero11custom_passENS_15AnalysisManagerIS2_JEEEJEEE
+  [   800]  N4llvm6detail11PassConceptINS_8FunctionENS_15AnalysisManagerIS2_JEEEJEEE
+
