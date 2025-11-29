@@ -1,0 +1,10 @@
+whatismysessioncookie.local
+whatismysessioncookie.internal
+whatismysessioncookie.service
+whatismysessioncookie.premium
+whatismysessioncookie.premiumfax
+whatismysessioncookie.premiumfax.local
+whatismysessioncookie.premiumfax.internal
+premiumfax.local
+premiumfax.internal
+fax.internal
