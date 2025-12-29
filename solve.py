@@ -210,7 +210,9 @@ def run_exploit():
                 break
             print(f"Server: {line.decode().strip()}")
             if b"hxp{" in line:
-                print(f"FOUND FLAG: {line.decode().strip()}")
+                flag_clean = line.decode().strip()
+                print(f"FOUND FLAG: {flag_clean}")
+                print(f"FLAG BYTES: {line}")
                 break
     except Exception as e:
         print(f"Exception during interaction: {e}")
