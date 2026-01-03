@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <title>  File &#34;/home/logicode/app/views/main_views.py&#34;, line 3
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = false,
+          EVALEX_TRUSTED = false,
+          SECRET = "SjKDjQoUFAZLakedDGzK";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>SyntaxError</h1>
+<div class="detail">
+  <p class="errormsg">  File &#34;/home/logicode/app/views/main_views.py&#34;, line 3
+    bp = Blueprint(main, __name__, url_prefix=/)
+                                              ^
+SyntaxError: invalid syntax
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-140557945964432">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">974</em>,
+      in <code class="function">app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>err = e</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>def app(</pre>
+<pre class="line before"><span class="ws">                </span>environ: WSGIEnvironment, start_response: StartResponse</pre>
+<pre class="line before"><span class="ws">            </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line current"><span class="ws">                </span>raise err from None
+<span class="ws">                </span>^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span># When not reloading, raise the error immediately so the</pre>
+<pre class="line after"><span class="ws">            </span># command fails.</pre>
+<pre class="line after"><span class="ws">            </span>raise e from None</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945964288">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/werkzeug/debug/__init__.py"</cite>,
+      line <em class="line">343</em>,
+      in <code class="function">debug_application</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>if self.evalex:</pre>
+<pre class="line before"><span class="ws">            </span>environ[&#34;werkzeug.debug.preserve_context&#34;] = contexts.append</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>app_iter = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line current"><span class="ws">            </span>app_iter = self.app(environ, start_response)
+<span class="ws">            </span>           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">            </span>yield from app_iter</pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app_iter, &#34;close&#34;):</pre>
+<pre class="line after"><span class="ws">                </span>app_iter.close()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>if hasattr(app_iter, &#34;close&#34;):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963856">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">974</em>,
+      in <code class="function">app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>err = e</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>def app(</pre>
+<pre class="line before"><span class="ws">                </span>environ: WSGIEnvironment, start_response: StartResponse</pre>
+<pre class="line before"><span class="ws">            </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line current"><span class="ws">                </span>raise err from None
+<span class="ws">                </span>^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span># When not reloading, raise the error immediately so the</pre>
+<pre class="line after"><span class="ws">            </span># command fails.</pre>
+<pre class="line after"><span class="ws">            </span>raise e from None</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963712">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">963</em>,
+      in <code class="function">run_command</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>The reloader and debugger are enabled by default with the &#39;--debug&#39;</pre>
+<pre class="line before"><span class="ws">    </span>option.</pre>
+<pre class="line before"><span class="ws">    </span>&#34;&#34;&#34;</pre>
+<pre class="line before"><span class="ws">    </span>try:</pre>
+<pre class="line current"><span class="ws">        </span>app: WSGIApplication = info.load_app()  # pyright: ignore
+<span class="ws">        </span>                       ^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">    </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">        </span>if is_running_from_reloader():</pre>
+<pre class="line after"><span class="ws">            </span># When reloading, print out the error immediately, but raise</pre>
+<pre class="line after"><span class="ws">            </span># it later so the debugger or server can handle it.</pre>
+<pre class="line after"><span class="ws">            </span>traceback.print_exc()</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963568">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">353</em>,
+      in <code class="function">load_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                </span>import_name = prepare_import(path)</pre>
+<pre class="line before"><span class="ws">                </span>app = locate_app(import_name, name)</pre>
+<pre class="line before"><span class="ws">            </span>else:</pre>
+<pre class="line before"><span class="ws">                </span>for path in (&#34;wsgi.py&#34;, &#34;app.py&#34;):</pre>
+<pre class="line before"><span class="ws">                    </span>import_name = prepare_import(path)</pre>
+<pre class="line current"><span class="ws">                    </span>app = locate_app(import_name, None, raise_if_not_found=False)
+<span class="ws">                    </span>      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">                    </span>if app is not None:</pre>
+<pre class="line after"><span class="ws">                        </span>break</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>if app is None:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963424">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">262</em>,
+      in <code class="function">locate_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>return None</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>module = sys.modules[module_name]</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>if app_name is None:</pre>
+<pre class="line current"><span class="ws">        </span>return find_best_app(module)
+<span class="ws">        </span>       ^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">    </span>else:</pre>
+<pre class="line after"><span class="ws">        </span>return find_app_by_string(module, app_name)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span>def get_version(ctx: click.Context, param: click.Parameter, value: t.Any) -&gt; None:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963280">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.13/site-packages/flask/cli.py"</cite>,
+      line <em class="line">72</em>,
+      in <code class="function">find_best_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>for attr_name in (&#34;create_app&#34;, &#34;make_app&#34;):</pre>
+<pre class="line before"><span class="ws">        </span>app_factory = getattr(module, attr_name, None)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if inspect.isfunction(app_factory):</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line current"><span class="ws">                </span>app = app_factory()
+<span class="ws">                </span>      ^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">                </span>if isinstance(app, Flask):</pre>
+<pre class="line after"><span class="ws">                    </span>return app</pre>
+<pre class="line after"><span class="ws">            </span>except TypeError as e:</pre>
+<pre class="line after"><span class="ws">                </span>if not _called_with_wrong_args(app_factory):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-140557945963136">
+  <h4>File <cite class="filename">"/home/logicode/app/__init__.py"</cite>,
+      line <em class="line">18</em>,
+      in <code class="function">create_app</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>db.init_app(app)</pre>
+<pre class="line before"><span class="ws">    </span>migrate.init_app(app, db)</pre>
+<pre class="line before"><span class="ws">    </span>from . import models</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">    </span>from .views import main_views, prob_views
+<span class="ws">    </span>^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^</pre>
+<pre class="line after"><span class="ws">    </span>app.register_blueprint(main_views.bp)</pre>
+<pre class="line after"><span class="ws">    </span>app.register_blueprint(prob_views.bp)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return app</pre></div>
+</div>
+</ul>
+  <pre class=syntaxerror>  File &#34;/home/logicode/app/views/main_views.py&#34;, line 3
+    bp = Blueprint(main, __name__, url_prefix=/)
+                                              ^
+SyntaxError: invalid syntax
+</pre>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 974, in app
+    raise err from None
+  File &#34;/usr/local/lib/python3.13/site-packages/werkzeug/debug/__init__.py&#34;, line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 974, in app
+    raise err from None
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 963, in run_command
+    app: WSGIApplication = info.load_app()  # pyright: ignore
+                           ~~~~~~~~~~~~~^^
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 353, in load_app
+    app = locate_app(import_name, None, raise_if_not_found=False)
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 262, in locate_app
+    return find_best_app(module)
+  File &#34;/usr/local/lib/python3.13/site-packages/flask/cli.py&#34;, line 72, in find_best_app
+    app = app_factory()
+  File &#34;/home/logicode/app/__init__.py&#34;, line 18, in create_app
+    from .views import main_views, prob_views
+  File &#34;/home/logicode/app/views/main_views.py&#34;, line 3
+    bp = Blueprint(main, __name__, url_prefix=/)
+                                              ^
+SyntaxError: invalid syntax
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 974, in app
+    raise err from None
+  File "/usr/local/lib/python3.13/site-packages/werkzeug/debug/__init__.py", line 343, in debug_application
+    app_iter = self.app(environ, start_response)
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 974, in app
+    raise err from None
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 963, in run_command
+    app: WSGIApplication = info.load_app()  # pyright: ignore
+                           ~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 353, in load_app
+    app = locate_app(import_name, None, raise_if_not_found=False)
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 262, in locate_app
+    return find_best_app(module)
+  File "/usr/local/lib/python3.13/site-packages/flask/cli.py", line 72, in find_best_app
+    app = app_factory()
+  File "/home/logicode/app/__init__.py", line 18, in create_app
+    from .views import main_views, prob_views
+  File "/home/logicode/app/views/main_views.py", line 3
+    bp = Blueprint(main, __name__, url_prefix=/)
+                                              ^
+SyntaxError: invalid syntax
+
+
+-->
