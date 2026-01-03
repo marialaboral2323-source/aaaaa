@@ -1,0 +1,11 @@
+
+/workspace/challenge/echo-back:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 402000 01000200 496e7075 743a0059 6f752073  ....Input:.You s
+ 402010 6169643a 20007200 666c6167 2e747874  aid: .r.flag.txt
+ 402020 00666c61 672e7478 74206e6f 7420666f  .flag.txt not fo
+ 402030 756e6400 666c6167 20726561 64206661  und.flag read fa
+ 402040 696c6564 00436f6e 67726174 73210065  iled.Congrats!.e
+ 402050 63686f2d 6261636b 20736572 76696365  cho-back service
+ 402060 000a6279 6500                        ..bye.          
