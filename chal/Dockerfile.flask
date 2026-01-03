@@ -1,0 +1,20 @@
+FROM --platform=linux/amd64 python:3.10-slim-bookworm
+
+ENV user warp
+ENV port 8000
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN adduser $user
+ADD ./deploy /app
+WORKDIR /app
+RUN pip3 install -r requirements.txt
+
+RUN touch /app/log.txt && chown $user:$user /app/log.txt
+
+RUN chown root:$user /app/flag.txt
+RUN chmod 555 /app/flag.txt
+
+USER $user
+EXPOSE $port
+
+CMD ["python3", "/app/app.py", "--host", "0.0.0.0", "--port", "8000"]

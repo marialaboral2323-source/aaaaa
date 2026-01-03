@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Flask 로그인 UI</title>
+<style>
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; max-width: 700px; margin: 40px auto; background: #f9f9f9; }
+    h1 { text-align: center; color: #333; }
+    .section { background: #fff; padding: 20px; margin: 15px 0; border-radius: 10px; box-shadow: 0 0 8px rgba(0,0,0,0.1); }
+    h2 { margin-top: 0; color: #555; }
+    input, button { padding: 8px; margin: 5px 0; width: 100%; font-size: 1em; }
+    button { background: #007BFF; color: #fff; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    #output { white-space: pre-wrap; background: #f1f1f1; padding: 10px; border-radius: 6px; margin-top: 10px; min-height: 50px; }
+</style>
+</head>
+<body>
+<h1>Flask 로그인 테스트 UI</h1>
+
+<div class="section">
+    <h2>로그인</h2>
+    <input type="text" id="login-username" placeholder="Username">
+    <input type="password" id="login-password" placeholder="Password">
+    <button onclick="login()">로그인</button>
+</div>
+
+<div class="section">
+    <h2>로그아웃</h2>
+    <button onclick="logout()">로그아웃</button>
+</div>
+
+<div class="section">
+    <h2>현재 사용자</h2>
+    <button onclick="whoami()">누구인지 확인</button>
+</div>
+
+<div class="section">
+    <h2>계산기</h2>
+    <input type="text" id="calc_text" placeholder="1+1">
+    <button onclick="calc()">계산</button>
+</div>
+
+<h2>결과</h2>
+<div id="output"></div>
+
+<script>
+const output = document.getElementById('output');
+
+async function login() {
+    const u = document.getElementById('login-username').value;
+    const p = document.getElementById('login-password').value;
+    const res = await fetch(`/login?username=${encodeURIComponent(u)}&password=${encodeURIComponent(p)}`);
+    output.textContent = await res.text();
+}
+
+async function logout() {
+    const res = await fetch('/logout');
+    output.textContent = await res.text();
+}
+
+async function whoami() {
+    const res = await fetch('/whoami');
+    output.textContent = await res.text();
+}
+
+async function calc() {
+    const t = document.getElementById('calc_text').value;
+    const res = await fetch(`/calc?text=${encodeURIComponent(t)}`);
+    output.textContent = await res.text();
+}
+
+</script>
+</body>
+</html>
+
