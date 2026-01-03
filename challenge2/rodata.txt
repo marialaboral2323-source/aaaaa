@@ -1,0 +1,6 @@
+
+/workspace/challenge2/chall:     file format elf64-x86-64
+
+Contents of section .rodata:
+ 2000 01000200 746f6b65 6e3d256c 780a0049  ....token=%lx..I
+ 2010 6e707574 3a004f4b 00686900           nput:.OK.hi.    
