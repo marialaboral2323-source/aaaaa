@@ -1,2 +1,1 @@
-[00:00] <alice> hola
-[00:01] <bob> nada que ver
+hello world\n
